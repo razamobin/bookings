@@ -1,0 +1,25 @@
+{{template "base" .}}
+
+{{define "content"}}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>this is the about page lol</h1>
+                <p>what we talking about lol new 1.2</p>
+                <p>test cache 1</p>
+                <p>test cache 2</p>
+                <p>this is data passed to the template: {{index .StringMap "test"}}. and this is text after the variable passed in</p>
+                <p>default data: {{index .StringMap "defaultdata"}}. after</p>
+
+                <p>
+                    {{if ne (index .StringMap "remote_ip") ""}}
+                        Your remote ip (from session) is {{index .StringMap "remote_ip"}}
+                    {{else}}
+                        Couldn't get ip from session yet. go to the <a href="/">home</a> page first
+                    {{end}}
+                </p>
+            </div>
+        </div>
+    </div>
+{{end}}
+                
